@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="edittext">
+        <item>@style/LightEditText</item>
+        <item>@style/DarkEditText</item>
+    </array>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF03A9F4</color>
+    <color name="colorPrimaryDark">#ff0171c9</color>
+    <color name="colorAccent">#FF00E5FF</color>
+    <color name="colorControlNormal">#FF78909C</color>
+    <color name="colorControlActivated">#FF03A9F4</color>
+    <color name="colorSwitchThumbNormal">#FF78909C</color>
+    <color name="white">#FFFFFF</color>
+    <color name="color_white_66ffffff">#66ffffff</color>
+
+    <color name="comment_bg">#FFFFFF</color>
+    <color name="actionbar_title">#FFFFFF</color>
+    <color name="primary_text">#212121</color>
+</resources>

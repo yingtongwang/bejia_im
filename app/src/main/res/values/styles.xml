@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--Base Theme-->
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!--no actionbar and title-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--action bar color-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--status bar color-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!--window background-->
+        <item name="android:windowBackground">@color/comment_bg</item>
+    </style>
+
+    <!-- Normal application theme. -->
+    <style name="AppTheme" parent="AppTheme.Base">
+        <!--actionbar text color-->
+        <item name="android:textColorPrimary">@color/primary_text</item>
+    </style>
+    <!-- 设置标题栏样式 -->
+    <style name="JDActionBarStyle" parent="Widget.AppCompat.Light.ActionBar">
+        <item name="titleTextStyle">@style/ActionBarTitleStyle</item>
+    </style>
+    <!-- 标题栏文字样式 -->
+    <style name="ActionBarTitleStyle" parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/actionbar_title</item>
+    </style>
+
+
+    <!-- EditText Style-->
+
+    <style name="LightEditText" parent="Material.Widget.EditText.Light">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">@color/abc_primary_text_material_light</item>
+        <item name="android:textColorHint">@color/abc_secondary_text_material_light</item>
+        <item name="et_dividerColor">@drawable/color_divider_light</item>
+        <item name="et_labelTextColor">@drawable/color_label_light</item>
+        <item name="et_supportTextErrorColor">#FFFF0000</item>
+        <item name="et_dividerErrorColor">#FFFF0000</item>
+    </style>
+    <!-- EditText Style-->
+
+    <style name="DarkEditText" parent="Material.Widget.EditText">
+        <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Body1</item>
+        <item name="android:textColor">@color/abc_primary_text_material_dark</item>
+        <item name="android:textColorHint">@color/abc_secondary_text_material_dark</item>
+        <item name="et_dividerColor">@drawable/color_divider_dark</item>
+        <item name="et_labelTextColor">@drawable/color_label_dark</item>
+        <item name="et_supportTextErrorColor">#FFFF0000</item>
+        <item name="et_dividerErrorColor">#FFFF0000</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

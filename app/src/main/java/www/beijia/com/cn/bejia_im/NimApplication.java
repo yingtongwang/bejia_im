@@ -46,6 +46,9 @@ public class NimApplication extends Application {
 
         if (inMainProcess()) {
             initUIKit();
+
+
+
         }
     }
 
