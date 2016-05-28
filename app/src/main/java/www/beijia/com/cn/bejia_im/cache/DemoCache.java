@@ -1,8 +1,10 @@
-package www.beijia.com.cn.bejia_im;
+package www.beijia.com.cn.bejia_im.cache;
 
 import android.content.Context;
 
 import com.netease.nimlib.sdk.StatusBarNotificationConfig;
+
+import www.beijia.com.cn.bejia_im.NimUIKit;
 
 /**
  * Created by Wangyingbao on 2016/5/19.

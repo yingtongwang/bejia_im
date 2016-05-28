@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+import www.beijia.com.cn.bejia_im.NimUIKit;
 import www.beijia.com.cn.bejia_im.util.key.UIKitLogTag;
 import www.beijia.com.cn.bejia_im.util.log.LogUtil;
 
@@ -42,6 +43,52 @@ public class NimUserInfoCache {
         return null;
     }
 
+    /**
+     * 构建缓存与清理
+     */
+    public void buildCache() {
+        List<NimUserInfo> users = NIMClient.getService(UserService.class).getAllUserInfo();
+        addOrUpdateUsers(users, false);
+        LogUtil.i(UIKitLogTag.USER_CACHE, "build NimUserInfoCache completed, users count = " + account2UserMap.size());
+    }
+
+    /**
+     * *************************************** User缓存管理与变更通知 ********************************************
+     */
+
+    private void addOrUpdateUsers(final List<NimUserInfo> users, boolean notify) {
+        if (users == null || users.isEmpty()) {
+            return;
+        }
+
+        // update cache
+        for (NimUserInfo u : users) {
+            account2UserMap.put(u.getAccount(), u);
+        }
+
+        // log
+        List<String> accounts = getAccounts(users);
+        DataCacheManager.Log(accounts, "on userInfo changed", UIKitLogTag.USER_CACHE);
+
+        // 通知变更
+        if (notify && accounts != null && !accounts.isEmpty()) {
+            NimUIKit.notifyUserInfoChanged(accounts); // 通知到UI组件
+        }
+    }
+
+    private List<String> getAccounts(List<NimUserInfo> users) {
+        if (users == null || users.isEmpty()) {
+            return null;
+        }
+
+        List<String> accounts = new ArrayList<String>(users.size());
+        for (NimUserInfo user : users) {
+            accounts.add(user.getAccount());
+        }
+
+        return accounts;
+    }
+
     public NimUserInfo getUserInfo(String account) {
         if (TextUtils.isEmpty(account) || account2UserMap == null) {
             LogUtil.e(UIKitLogTag.USER_CACHE, "getUserInfo null, account=" + account + ", account2UserMap=" + account2UserMap);
@@ -49,6 +96,14 @@ public class NimUserInfoCache {
         }
 
         return account2UserMap.get(account);
+    }
+
+    public void clear() {
+        clearUserCache();
+    }
+
+    private void clearUserCache() {
+        account2UserMap.clear();
     }
 
     /**

@@ -16,27 +16,31 @@ import com.netease.nimlib.sdk.msg.MessageNotifierCustomization;
 import com.netease.nimlib.sdk.msg.constant.SessionTypeEnum;
 import com.netease.nimlib.sdk.msg.model.IMMessage;
 import com.netease.nimlib.sdk.uinfo.UserInfoProvider;
-import com.netease.nimlib.sdk.uinfo.model.NimUserInfo;
+import com.rey.material.app.ThemeManager;
 import com.tencent.bugly.crashreport.CrashReport;
 
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-
+import www.beijia.com.cn.bejia_im.cache.DemoCache;
 import www.beijia.com.cn.bejia_im.cache.NimUserInfoCache;
+import www.beijia.com.cn.bejia_im.cache.TeamDataCache;
 import www.beijia.com.cn.bejia_im.common.preferences.Preferences;
 import www.beijia.com.cn.bejia_im.common.preferences.UserPreferences;
 import www.beijia.com.cn.bejia_im.common.widget.ImageLoaderKit;
 import www.beijia.com.cn.bejia_im.login.WelcomeActivity;
 import www.beijia.com.cn.bejia_im.util.SystemUtil;
-import www.beijia.com.cn.bejia_im.util.log.LogUtil;
 
 /**
  * Created by Wangyingbao on 2016/5/19.
  */
 public class NimApplication extends Application {
+    private static NimApplication sApplication;
+
+    public static NimApplication getApplication() {
+        return sApplication;
+    }
+
     public void onCreate() {
         super.onCreate();
-
+        ThemeManager.init(this, 2, 0, null);
         //初始化Bugly
         CrashReport.initCrashReport(getApplicationContext());
 
@@ -46,9 +50,6 @@ public class NimApplication extends Application {
 
         if (inMainProcess()) {
             initUIKit();
-
-
-
         }
     }
 
@@ -73,7 +74,7 @@ public class NimApplication extends Application {
         }
         // 点击通知需要跳转到的界面
         config.notificationEntrance = WelcomeActivity.class;
-        config.notificationSmallIconId = R.mipmap.ic_stat_notify_msg;
+        config.notificationSmallIconId = R.drawable.ic_stat_notify_msg;
 
         // 通知铃声的uri字符串
         config.notificationSound = "android.resource://com.netease.nim.demo/raw/msg";
@@ -82,7 +83,7 @@ public class NimApplication extends Application {
         UserPreferences.setStatusConfig(config);
 
         // 配置保存图片，文件，log等数据的目录
-        String sdkPath = Environment.getExternalStorageDirectory() + "/" + getPackageName() + "/nim";
+        String sdkPath = Environment.getExternalStorageDirectory() + "/" + getPackageName() + "/bejia_im";
         options.sdkStorageRootPath = sdkPath;
 
         // 配置数据库加密秘钥
@@ -119,12 +120,12 @@ public class NimApplication extends Application {
 
         @Override
         public int getDefaultIconResId() {
-            return R.mipmap.avatar_def;
+            return R.drawable.avatar_def;
         }
 
         @Override
         public Bitmap getTeamIcon(String teamId) {
-            Drawable drawable = getResources().getDrawable(R.mipmap.nim_avatar_group);
+            Drawable drawable = getResources().getDrawable(R.drawable.nim_avatar_group);
             if (drawable instanceof BitmapDrawable) {
                 return ((BitmapDrawable) drawable).getBitmap();
             }

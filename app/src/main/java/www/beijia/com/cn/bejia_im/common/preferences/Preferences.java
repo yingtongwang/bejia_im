@@ -3,7 +3,7 @@ package www.beijia.com.cn.bejia_im.common.preferences;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import www.beijia.com.cn.bejia_im.DemoCache;
+import www.beijia.com.cn.bejia_im.cache.DemoCache;
 
 /**
  * Created by Wangyingbao on 2016/5/19.

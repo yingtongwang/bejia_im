@@ -11,8 +11,7 @@ import com.netease.nimlib.sdk.msg.model.IMMessage;
 
 import java.util.ArrayList;
 
-import www.beijia.com.cn.bejia_im.DemoCache;
-import www.beijia.com.cn.bejia_im.MainActivity;
+import www.beijia.com.cn.bejia_im.cache.DemoCache;
 import www.beijia.com.cn.bejia_im.R;
 import www.beijia.com.cn.bejia_im.common.activity.TActivity;
 import www.beijia.com.cn.bejia_im.common.preferences.Preferences;

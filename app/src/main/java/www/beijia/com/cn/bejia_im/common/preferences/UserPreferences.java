@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 import com.alibaba.fastjson.JSONObject;
 import com.netease.nimlib.sdk.StatusBarNotificationConfig;
 
-import www.beijia.com.cn.bejia_im.DemoCache;
+import www.beijia.com.cn.bejia_im.cache.DemoCache;
 
 /**
  * Created by hzxuwen on 2015/4/13.

@@ -22,6 +22,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import www.beijia.com.cn.bejia_im.NimUIKit;
 import www.beijia.com.cn.bejia_im.common.ui.imageview.HeadImageView;
 import www.beijia.com.cn.bejia_im.util.BitmapUtil;
 import www.beijia.com.cn.bejia_im.util.log.LogUtil;
@@ -138,6 +139,23 @@ public class ImageLoaderKit {
     }
 
     /**
+     * 构建头像缓存
+     */
+    public static void buildAvatarCache(List<String> accounts) {
+        if (accounts == null || accounts.isEmpty()) {
+            return;
+        }
+
+        UserInfoProvider.UserInfo userInfo;
+        for (String account : accounts) {
+            userInfo = NimUIKit.getUserInfoProvider().getUserInfo(account);
+            asyncLoadAvatarBitmapToCache(userInfo);
+        }
+
+        LogUtil.i(TAG, "build avatar cache completed, avatar count =" + accounts.size());
+    }
+
+    /**
      * 判断图片地址是否合法，合法地址如下：
      * String uri = "http://site.com/image.png"; // from Web
      * String uri = "file:///mnt/sdcard/image.png"; // from SD card
@@ -164,5 +182,9 @@ public class ImageLoaderKit {
         }
 
         return false;
+    }
+
+    public void clear() {
+        ImageLoader.getInstance().clearMemoryCache();
     }
 }
