@@ -5,11 +5,16 @@ android {
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        applicationId "www.beijia.com.cn.bejia_im"
+        applicationId "www.bejia.com.cn.demo"
         minSdkVersion 21
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        ndk {
+            //设置支持的SO库架构
+            //bugly不支持mips
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a'
+        }
     }
     buildTypes {
         release {
@@ -17,6 +22,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+//    productFlavors {
+//        x86 { ndk { abiFilter "x86" } }
+//        armv7 { ndk { abiFilter "armeabi-v7a" } }
+//        arm { ndk { abiFilter "armeabi" } }
+//    }
+    sourceSets.main { jniLibs.srcDir 'src/libs' }
+
 }
 
 dependencies {
@@ -29,8 +41,12 @@ dependencies {
     compile 'com.android.support:cardview-v7:23.1.1'
     compile 'com.github.rey5137:material:1.2.2'
     //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.2.9
-    compile files('libs/nim-sdk-2.1.2.jar')
-    compile files('libs/fastjson-1.1.34.android.jar')
-    compile files('libs/universal-image-loader-1.9.4.jar')
-    compile files('libs/cosinesdk.jar')
+    compile files('src/libs/android-support-multidex.jar')
+    compile files('src/libs/bolts-android-1.2.0.jar')
+    compile files('src/libs/fastjson-1.1.34.android.jar')
+    compile files('src/libs/hyphenatechat_3.1.2.jar')
+    compile files('src/libs/Parse-1.9.4.jar')
+    compile files('src/libs/umeng-analytics-v5.2.4.jar')
+    compile files('src/libs/umeng-update-v2.6.0.1.jar')
+    compile files('src/libs/universal-image-loader-1.9.4.jar')
 }

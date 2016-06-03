@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    >
+                >
 
                     <com.rey.material.widget.EditText
                         android:id="@+id/edit_login_account"
@@ -62,7 +62,7 @@
                         android:inputType="textPassword"
                         android:longClickable="false"
                         android:padding="8dp"
-                        android:text="12344321"
+                        android:text="123456"
                         android:textColor="@color/white"
                         android:textColorHint="@color/color_white_66ffffff"
                         android:textCursorDrawable="@null"
@@ -78,7 +78,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:visibility="gone"
-                    >
+                >
 
                     <com.rey.material.widget.EditText
                         android:id="@+id/edit_register_account"
@@ -147,6 +147,8 @@
                 android:textColor="@drawable/register_tip_selector"
                 android:textSize="15sp"
                 app:v_styleId="@array/button_flat"/>
+            android:orientation="vertical">
+
 
         </LinearLayout>
     </ScrollView>

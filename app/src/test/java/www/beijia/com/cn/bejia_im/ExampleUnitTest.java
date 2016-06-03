@@ -1,4 +1,4 @@
-package www.beijia.com.cn.bejia_im;
+package www.bejia.com.cn.demo;
 
 import org.junit.Test;
 
