@@ -6,7 +6,7 @@
         <attr name="wv_horizontalPadding" format="reference|dimension"/>
         <attr name="wv_animDuration" format="reference|integer"/>
     </declare-styleable>
-    
+
     <declare-styleable name="ContactView">
         <attr name="cv_buttonSrc" format="reference"/>
         <attr name="cv_buttonSize" format="reference|dimension"/>
@@ -21,9 +21,16 @@
         <attr name="cv_addressTextAppearance" format="reference"/>
         <attr name="cv_addressTextSize" format="reference|dimension"/>
         <attr name="cv_addressTextColor" format="reference|color"/>
-        <attr name="android:minHeight" />
+        <attr name="android:minHeight"/>
     </declare-styleable>
 
+
+    <declare-styleable name="ChangeColorIconView">
+        <attr name="icons" format="reference"/>
+        <attr name="colors" format="color"/>
+        <attr name="text" format="string"/>
+        <attr name="text_size" format="dimension"/>
+    </declare-styleable>
     <declare-styleable name="ContactEditText">
         <attr name="cet_spanHeight" format="reference|dimension"/>
         <attr name="cet_spanMaxWidth" format="reference|dimension"/>
@@ -31,15 +38,14 @@
         <attr name="cet_spanPaddingRight" format="reference|dimension"/>
         <attr name="cet_spanFontFamily" format="reference|string"/>
         <attr name="cet_spanTextStyle" format="integer">
-            <enum name="normal" value="0" />
-            <enum name="bold" value="1" />
-            <enum name="italic" value="2" />
-            <enum name="bold_italic" value="3" />
+            <enum name="normal" value="0"/>
+            <enum name="bold" value="1"/>
+            <enum name="italic" value="2"/>
+            <enum name="bold_italic" value="3"/>
         </attr>
         <attr name="cet_spanTextSize" format="reference|dimension"/>
         <attr name="cet_spanTextColor" format="reference|color"/>
         <attr name="cet_spanBackgroundColor" format="reference|color"/>
         <attr name="cet_spanSpacing" format="reference|dimension"/>
     </declare-styleable>
-
 </resources>
