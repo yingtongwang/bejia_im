@@ -13,7 +13,7 @@ android {
         ndk {
             //设置支持的SO库架构
             //bugly不支持mips
-            abiFilters 'armeabi', 'x86', 'armeabi-v7a'
+            abiFilters 'armeabi', 'x86', 'armeabi-v7a','mips','arm64-v8a'
         }
     }
     buildTypes {
@@ -49,4 +49,7 @@ dependencies {
     compile files('src/libs/umeng-analytics-v5.2.4.jar')
     compile files('src/libs/umeng-update-v2.6.0.1.jar')
     compile files('src/libs/universal-image-loader-1.9.4.jar')
+    compile files('src/libs/mid-sdk-2.3.jar')
+    compile files('src/libs/mta-android-stat-sdk-2.2.0_20160504.jar')
+    compile files('src/libs/glide-3.6.1.jar')
 }

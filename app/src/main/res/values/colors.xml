@@ -12,7 +12,9 @@
     <color name="transparent">#00000000</color>
     <color name="color_black_333333">#333333</color>
     <color name="black">#000000</color>
+    <color name="color_aaaaaa_content_text">#ffaaaaaa</color>
     <color name="color_b3b3b3">#b3b3b3</color>
+    <color name="color_gray_d9d9d9">#d9d9d9</color>
 
     <color name="comment_bg">#FFFFFF</color>
     <color name="actionbar_title">#FFFFFF</color>
