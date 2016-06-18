@@ -1,14 +1,17 @@
 package www.bejia.com.cn.demo.activity.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.hyphenate.EMConnectionListener;
 import com.hyphenate.EMError;
@@ -22,7 +25,9 @@ import java.util.List;
 import java.util.Map;
 
 import www.bejia.com.cn.demo.R;
+import www.bejia.com.cn.demo.activity.ChatActivity;
 import www.bejia.com.cn.demo.activity.adapter.RecentContactAdapter;
+import www.bejia.com.cn.demo.util.Constant;
 
 /**
  * Created by Wangyingbao on 2016/6/15. 最近联系人
@@ -53,6 +58,16 @@ public class RecentContactsFragment extends TFragment {
     }
 
     @Override
+    public void initData() {
+
+    }
+
+    @Override
+    public void initView() {
+
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_recent_contacts, container, false);
     }
@@ -62,6 +77,33 @@ public class RecentContactsFragment extends TFragment {
         listView = findView(R.id.lvMessages);
         emptyBg = findView(R.id.emptyBg);
         emptyHint = findView(R.id.message_list_empty_hint);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                EMConversation conversation = conversationList.get(position);
+                String username = conversation.getUserName();
+                if (username.equals(EMClient.getInstance().getCurrentUser()))
+                    Toast.makeText(getActivity(), R.string.Cant_chat_with_yourself, Toast.LENGTH_LONG).show();
+                else {
+                    // 进入聊天页面
+                    Intent intent = new Intent(getActivity(), ChatActivity.class);
+                    if (conversation.isGroup()) {
+                        if (conversation.getType() == EMConversation.EMConversationType.ChatRoom) {
+                            // it's group chat
+                            intent.putExtra(Constant.EXTRA_CHAT_TYPE, Constant.CHATTYPE_CHATROOM);
+                        } else {
+                            intent.putExtra(Constant.EXTRA_CHAT_TYPE, Constant.CHATTYPE_GROUP);
+                        }
+
+                    }
+                    ((TextView) view.findViewById(R.id.unread_number_tip)).setText("0");
+                    ((TextView) view.findViewById(R.id.unread_number_tip)).setVisibility(View.INVISIBLE);
+                    // it's single chat
+                    intent.putExtra(Constant.EXTRA_USER_ID, username);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     /**

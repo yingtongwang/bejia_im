@@ -45,7 +45,16 @@
     <string name="plus_scan">扫一扫</string>
     <string name="plus_take_photo">拍照分享</string>
 
-
+    <!-- 语音 -->
+    <string name="record_audio">按住 说话</string>
+    <string name="record_audio_end">松开 结束</string>
+    <string name="sdcard_not_exist_error">请插入SD卡</string>
+    <string name="recording_error">录音失败，请重试</string>
+    <string name="recording_init_failed">初始化录音失败</string>
+    <string name="recording_cancel">手指上滑，取消发送</string>
+    <string name="timer_default">00:00</string>
+    <string name="recording_cancel_tip">松开手指，取消发送</string>
+    <string name="recording_max_time">录音达到最大时间，是否发送？</string>
 
     <!-- 多端登录 -->
     <string name="multiport_manager">多端登录管理</string>
@@ -56,6 +65,33 @@
     <string name="multiport_logging">正在使用</string>
     <string name="kickout_notify">下线通知</string>
     <string name="kickout_content">你的帐号被%1$s踢出下线，请确定帐号信息安全</string>
+    <!-- session -->
+    <string name="input_panel_photo">图 片</string>
+    <string name="input_panel_video">视 频</string>
+    <string name="input_panel_location">位 置</string>
+    <string name="input_panel_take">拍 摄</string>
+    <string name="im_choose_pic">请选择JPG PNG BMP GIF格式的图片文件</string>
+    <string name="repeat_download_message">重新下载?</string>
+    <string name="repeat_send_has_blank">重 发</string>
+    <string name="repeat_send_message">重发消息?</string>
+    <string name="copy_has_blank">复 制</string>
+    <string name="delete_has_blank">删 除</string>
+    <string name="voice_to_text">转文字</string>
+    <string name="main_msg_list_delete_chatting">删除该聊天</string>
+    <string name="main_msg_list_sticky_on_top">置顶该聊天</string>
+    <string name="main_msg_list_clear_sticky_on_top">取消置顶</string>
+    <string name="save_to_device">保存到手机</string>
+    <string name="picture_save_fail">图片保存失败</string>
+    <string name="picture_save_to">图片已保存到手机</string>
+    <string name="search_join_team">搜索加入群组</string>
+    <string name="file_transfer_state_downloaded">已下载</string>
+    <string name="file_transfer_state_undownload">未下载</string>
+    <string name="trans_voice_failed">语音转化失败</string>
+    <string name="team_invalid_tip">您已退出该群</string>
+    <string name="team_send_message_not_allow">您已不在该群，不能发送消息</string>
+    <string name="send">发送</string>
+    <string name="unsupport_title">无法显示该内容</string>
+    <string name="unsupport_desc">客户端版本不支持该内容</string>
 
     <!--rey-->
     <string name="rd_repeat">Repeat</string>
@@ -298,7 +334,7 @@
     <string name="have_you_removed">Have you removed from his buddy list</string>
     <string name="can_not_connect_chat_server_connection">Cannot connect to server</string>
     <string name="the_current_network">The current network is not available, please check the network Settings</string>
-    <string name="Invite_you_to_join_a_group_chat"> Invite you to join this group</string>
+    <string name="Invite_you_to_join_a_group_chat">Invite you to join this group</string>
     <string name="Agreed_to_your_group_chat_application">Accepted your group application</string>
     <string name="Logoff_notification">Logoff notification</string>
     <string name="Remove_the_notification">Remove the notification</string>
@@ -353,7 +389,7 @@
     <string name="dismiss_group">Dismiss group</string>
     <string name="add_public_group_chat">Add public group</string>
     <string name="gorup_not_found">Can not find this group</string>
-    <string name= "no_more_messages">no more messages</string>
+    <string name="no_more_messages">no more messages</string>
     <string name="join_public_group">Join public group</string>
     <string name="chatroom_allow_owner_leave">Allow chatroom owner leave</string>
     <string name="group_id">Group ID</string>
@@ -362,7 +398,9 @@
     <string name="search_pubic_group">Search public group</string>
     <string name="group_not_existed">The group does not exist</string>
     <string name="group_search_failed">Search failed</string>
-    <string name="nickname_description">Once this nick is set, this nick will be used in push notification (by default this is HuanXin ID ) when the receiver is using the IOS device.</string>
+    <string name="nickname_description">Once this nick is set, this nick will be used in push notification (by default this is HuanXin ID ) when the
+        receiver is using the IOS device.
+    </string>
     <string name="error_send_invalid_content">The message content is not allowed to be sent!</string>
     <string name="error_send_not_in_the_group">You already were not in the group</string>
     <string name="refreshing_group_list">Refreshing group list</string>

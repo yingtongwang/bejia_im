@@ -103,6 +103,15 @@
             </intent-filter>
         </receiver>
 
+        <!-- 开机自启动服务 -->
+        <receiver android:name="www.bejia.com.cn.demo.activity.receiver.StartServiceReceiver">
+            <intent-filter android:priority="1000">
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </receiver>
 
         <!-- gcm start -->
         <receiver
@@ -119,6 +128,15 @@
                  android:exported="false">
         </service>
 
+        <receiver
+            android:name="www.bejia.com.cn.demo.activity.receiver.GCMPushBroadCast"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.hyphenate.sdk.push"/>
+                <category android:name="www.bejia.com.cn.demo"/>
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".activity.WelcomeActivity"
 
@@ -133,8 +151,14 @@
             android:name=".activity.login.LoginActivity"
             android:label="@string/app_name"></activity>
         <activity
+            android:name=".activity.ChatActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize"></activity>
+        <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"></activity>
+
     </application>
 
 </manifest>
